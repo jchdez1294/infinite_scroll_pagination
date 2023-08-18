@@ -103,66 +103,26 @@ class PagedSliverList<PageKeyType, ItemType> extends StatelessWidget {
           context,
           itemBuilder,
           itemCount,
-          noMoreItemsIndicatorBuilder,
+          progressIndicatorBuilder,
         ) =>
             _buildSliverList(
           itemBuilder,
           itemCount,
-          statusIndicatorBuilder: noMoreItemsIndicatorBuilder,
+          statusIndicatorBuilder: progressIndicatorBuilder,
         ),
         errorListingBuilder: (
           context,
           itemBuilder,
           itemCount,
-          noMoreItemsIndicatorBuilder,
+          errorIndicatorBuilder,
         ) =>
             _buildSliverList(
           itemBuilder,
           itemCount,
-          statusIndicatorBuilder: noMoreItemsIndicatorBuilder,
+          statusIndicatorBuilder: errorIndicatorBuilder,
         ),
         shrinkWrapFirstPageIndicators: shrinkWrapFirstPageIndicators,
       );
-
-  // PagedLayoutBuilder<PageKeyType, ItemType>(
-  //   layoutProtocol: PagedLayoutProtocol.sliver,
-  //   pagingController: pagingController,
-  //   builderDelegate: builderDelegate,
-  //   completedListingBuilder: (
-  //     context,
-  //     itemBuilder,
-  //     itemCount,
-  //     noMoreItemsIndicatorBuilder,
-  //   ) =>
-  //       _buildSliverList(
-  //     itemBuilder,
-  //     itemCount,
-  //     statusIndicatorBuilder: noMoreItemsIndicatorBuilder,
-  //   ),
-  //   loadingListingBuilder: (
-  //     context,
-  //     itemBuilder,
-  //     itemCount,
-  //     progressIndicatorBuilder,
-  //   ) =>
-  //       _buildSliverList(
-  //     itemBuilder,
-  //     itemCount,
-  //     statusIndicatorBuilder: progressIndicatorBuilder,
-  //   ),
-  //   errorListingBuilder: (
-  //     context,
-  //     itemBuilder,
-  //     itemCount,
-  //     errorIndicatorBuilder,
-  //   ) =>
-  //       _buildSliverList(
-  //     itemBuilder,
-  //     itemCount,
-  //     statusIndicatorBuilder: errorIndicatorBuilder,
-  //   ),
-  //   shrinkWrapFirstPageIndicators: shrinkWrapFirstPageIndicators,
-  // );
 
   SliverMultiBoxAdaptorWidget _buildSliverList(
     IndexedWidgetBuilder itemBuilder,

@@ -113,27 +113,23 @@ class _PagedLayoutBuilderState<PageKeyType, ItemType>
 
   WidgetBuilder get _firstPageErrorIndicatorBuilder =>
       _builderDelegate.firstPageErrorIndicatorBuilder ??
-      (_) => FirstPageErrorIndicator(
-            onTryAgain: _pagingController.retryLastFailedRequest,
-          );
+      (_) => const SizedBox.shrink();
 
   WidgetBuilder get _newPageErrorIndicatorBuilder =>
       _builderDelegate.newPageErrorIndicatorBuilder ??
-      (_) => NewPageErrorIndicator(
-            onTap: _pagingController.retryLastFailedRequest,
-          );
+      (_) => const SizedBox.shrink();
 
   WidgetBuilder get _firstPageProgressIndicatorBuilder =>
       _builderDelegate.firstPageProgressIndicatorBuilder ??
-      (_) => FirstPageProgressIndicator();
+      (_) => const SizedBox.shrink();
 
   WidgetBuilder get _newPageProgressIndicatorBuilder =>
       _builderDelegate.newPageProgressIndicatorBuilder ??
-      (_) => const NewPageProgressIndicator();
+      (_) => const SizedBox.shrink();
 
   WidgetBuilder get _noItemsFoundIndicatorBuilder =>
       _builderDelegate.noItemsFoundIndicatorBuilder ??
-      (_) => NoItemsFoundIndicator();
+      (_) => const SizedBox.shrink();
 
   WidgetBuilder? get _noMoreItemsIndicatorBuilder =>
       _builderDelegate.noMoreItemsIndicatorBuilder;

@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:infinite_scroll_pagination/src/utils/listenable_listener.dart';
-import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/first_page_error_indicator.dart';
-import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/first_page_progress_indicator.dart';
-import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/new_page_error_indicator.dart';
+// import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/first_page_error_indicator.dart';
+// import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/first_page_progress_indicator.dart';
+// import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/new_page_error_indicator.dart';
 import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/new_page_progress_indicator.dart';
-import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/no_items_found_indicator.dart';
+// import 'package:infinite_scroll_pagination/src/widgets/helpers/default_status_indicators/no_items_found_indicator.dart';
 import 'package:sliver_tools/sliver_tools.dart';
 
 typedef CompletedListingBuilder = Widget Function(
@@ -121,13 +121,14 @@ class _PagedLayoutBuilderState<PageKeyType, ItemType>
       (_) => const SizedBox.shrink();
 
   WidgetBuilder get _newPageProgressIndicatorBuilder =>
-      (_) => const SizedBox.shrink();
+      _builderDelegate.newPageProgressIndicatorBuilder ??
+      (_) => const NewPageProgressIndicator();
 
   WidgetBuilder get _noItemsFoundIndicatorBuilder =>
       (_) => const SizedBox.shrink();
 
   WidgetBuilder? get _noMoreItemsIndicatorBuilder =>
-      _builderDelegate.noMoreItemsIndicatorBuilder;
+      (_) => const SizedBox.shrink();
 
   int get _invisibleItemsThreshold =>
       _pagingController.invisibleItemsThreshold ?? 3;

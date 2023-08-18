@@ -112,23 +112,18 @@ class _PagedLayoutBuilderState<PageKeyType, ItemType>
   PagedLayoutProtocol get _layoutProtocol => widget.layoutProtocol;
 
   WidgetBuilder get _firstPageErrorIndicatorBuilder =>
-      _builderDelegate.firstPageErrorIndicatorBuilder ??
       (_) => const SizedBox.shrink();
 
   WidgetBuilder get _newPageErrorIndicatorBuilder =>
-      _builderDelegate.newPageErrorIndicatorBuilder ??
       (_) => const SizedBox.shrink();
 
   WidgetBuilder get _firstPageProgressIndicatorBuilder =>
-      _builderDelegate.firstPageProgressIndicatorBuilder ??
       (_) => const SizedBox.shrink();
 
   WidgetBuilder get _newPageProgressIndicatorBuilder =>
-      _builderDelegate.newPageProgressIndicatorBuilder ??
       (_) => const SizedBox.shrink();
 
   WidgetBuilder get _noItemsFoundIndicatorBuilder =>
-      _builderDelegate.noItemsFoundIndicatorBuilder ??
       (_) => const SizedBox.shrink();
 
   WidgetBuilder? get _noMoreItemsIndicatorBuilder =>
